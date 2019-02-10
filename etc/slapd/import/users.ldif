@@ -1,0 +1,59 @@
+dn: cn=admin,dc=enabel,dc=be
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+userPassword: password
+description: LDAP administrator
+
+dn: c=BE,dc=enabel,dc=be
+objectClass: country
+c: BE
+description: Belgium
+
+dn: uid=user.test@enabel.be,dc=enabel,dc=be
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: user
+uid: user.test@enabel.be
+sn: test
+cn: User TEST
+employeeNumber: 1
+displayName: TEST, User
+title: Utilisateur de test
+initials: M
+mail: user.test@enabel.be
+userPassword: password
+
+dn: uid=manager.test@enabel.be,dc=enabel,dc=be
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: manager
+uid: manager.test@enabel.be
+sn: test
+cn: manager TEST
+employeeNumber: 2
+displayName: TEST, manager
+title: Manager de test
+initials: F
+mail: manager.test@enabel.be
+userPassword: password
+
+dn: uid=user.bel@enabel.be,c=BE, dc=enabel,dc=be
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: user
+uid: user.bel@enabel.be
+sn: Belgium
+cn: User BELGIUM
+employeeNumber: 3
+displayName: BELGIUM, User
+title: User from Belgium
+initials: M
+mail: user.bel@enabel.be
+userPassword: password

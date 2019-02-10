@@ -1,0 +1,28 @@
+[General]
+FullMachineName = dev-sso.local
+SuiteSpotGroup = nobody
+SuiteSpotUserID = nobody
+AdminDomain = enabel.be
+ConfigDirectoryAdminID = admin
+ConfigDirectoryAdminPwd = admin
+ConfigDirectoryLdapURL = ldap://localhost:389/o=NetscapeRoot
+ServerRoot = /usr/lib64/dirsrv
+
+[slapd]
+SlapdConfigForMC = yes
+UseExistingMC = No
+ServerPort = 389
+ServerIdentifier = dir
+Suffix = dc=enabel,dc=be
+RootDN = cn=Directory Manager
+RootDNPwd = password
+AddOrgEntries = Yes
+AddSampleEntries = No
+InstallLdifFile = suggest
+
+[admin]
+Port = 9830
+ServerIpAddress = 0.0.0.0
+ServerAdminID = admin
+ServerAdminPwd = admin
+SysUser = nobody
