@@ -16,6 +16,14 @@ RUN wget https://github.com/simplesamlphp/simplesamlphp/releases/download/v$SIMP
     && rm simplesamlphp-$SIMPLESAMLPHP_VER.tar.gz \
     && mv simplesamlphp-$SIMPLESAMLPHP_VER /var/simplesamlphp
 
+RUN echo $'\nSetEnv SIMPLESAMLPHP_CONFIG_DIR /var/simplesamlphp/config\nAlias /simplesaml /var/simplesamlphp/www\n \
+<Directory /var/simplesamlphp/www>\n \
+    Require all granted\n \
+</Directory>\n' \
+       >> /etc/httpd/conf/httpd.conf
+
+COPY httpd-foreground /usr/local/bin/
+
 # LDAP
 #------
 RUN mkdir -p /etc/slapd/conf && mkdir -p /etc/slapd/import
@@ -41,6 +49,6 @@ RUN useradd ldapadmin \
 COPY etc/supervisor.conf /etc/supervisor.conf
 COPY etc/supervisor/conf.d/ /etc/supervisor/conf.d/
 
-EXPOSE 389 9001
+EXPOSE 80 443 9001
 
 CMD supervisord -c /etc/supervisor.conf
