@@ -19,7 +19,8 @@ $config = array(
             'displayName',
             'employeeNumber',
             'title',
-            'initials'
+            'initials',
+            'uid'
         ),
         'search.enable' => TRUE,
         'search.base' => 'dc=enabel,dc=be',

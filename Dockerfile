@@ -25,7 +25,9 @@ RUN echo $'\nSetEnv SIMPLESAMLPHP_CONFIG_DIR /var/simplesamlphp/config\nAlias /s
 COPY httpd-foreground /usr/local/bin/
 # SimpleSamlPHP Config
 COPY var/simplesamlphp/config/ /var/simplesamlphp/config/
-COPY var/simplesamlphp/metadata/ /var/simplesamlphp/metadata/
+COPY var/simplesamlphp/metadata/saml20-ipd-hosted.php /var/simplesamlphp/metadata/saml20-ipd-hosted.php
+# Generate certificats
+RUN openssl req -newkey rsa:2048 -new -x509 -days 3652 -nodes -out /var/simplesamlphp/cert/server.crt -keyout /var/simplesamlphp/cert/server.pem -subj "/C=BE/ST=Brussels/L=Brussels/O=Enabel/OU=DevOpsBE/CN=localhost"
 # httpd config
 COPY etc/httpd/conf/ssp.conf /etc/httpd/conf.d/ssp.conf
 COPY var/www/html /var/www/html
