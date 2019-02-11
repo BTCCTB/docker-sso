@@ -113,6 +113,24 @@ Adapters should generate their own private key and get the CSR signed by a trust
 ### Logging 
 This image does not use the standard Docker logging mechanism, but the native supervisord logging.
 
+### Credentials
+
+#### LDAP
+
+Administrator: `cn=Directory Manager"`
+password: `password`
+
+User test: `user.test@enabel.be`
+password: `password`
+
+User Belgium: `user.bel@enabel.be`
+password: `password`
+
+### Simplesamlphp
+
+Administrator: `admin`
+password: `admin1234`
+
 ## Building from source:
  
 ```
