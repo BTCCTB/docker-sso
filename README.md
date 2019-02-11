@@ -117,7 +117,7 @@ This image does not use the standard Docker logging mechanism, but the native su
 
 #### LDAP
 
-Administrator: `cn=Directory Manager"`
+Administrator: `cn=Directory Manager`
 password: `password`
 
 User test: `user.test@enabel.be`
