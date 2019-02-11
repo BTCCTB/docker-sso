@@ -21,8 +21,14 @@ RUN echo $'\nSetEnv SIMPLESAMLPHP_CONFIG_DIR /var/simplesamlphp/config\nAlias /s
     Require all granted\n \
 </Directory>\n' \
        >> /etc/httpd/conf/httpd.conf
-
+# httpd as service
 COPY httpd-foreground /usr/local/bin/
+# SimpleSamlPHP Config
+COPY var/simplesamlphp/config/ /var/simplesamlphp/config/
+COPY var/simplesamlphp/metadata/ /var/simplesamlphp/metadata/
+# httpd config
+COPY etc/httpd/conf/ssp.conf /etc/httpd/conf.d/ssp.conf
+COPY var/www/html /var/www/html
 
 # LDAP
 #------
