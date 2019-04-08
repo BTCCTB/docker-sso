@@ -28,4 +28,4 @@ build-other:
 build:
    stage: build
    script:
-     - docker build -t enabel/dev-sso .
+     - docker build -t enabel/docker-sso .
