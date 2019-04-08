@@ -1,6 +1,6 @@
 FROM centos:centos7
 LABEL maintenaire="Damien LAGAE"
-ENV SIMPLESAMLPHP_VER=1.16.3
+ENV SIMPLESAMLPHP_VER=1.17.2
 
 RUN yum -y install epel-release \
     && yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm \

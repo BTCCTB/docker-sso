@@ -6,9 +6,8 @@
  */
 
 $metadata['__DYNAMIC:1__'] = array(
-
 	'host' => '__DEFAULT__',
 	'privatekey' => 'server.pem',
 	'certificate' => 'server.crt',
-	'auth' => 'ldap',
+	'auth' => 'enabel-ldap',
 );

@@ -3,7 +3,7 @@ $config = array(
     'admin' => array(
         'core:AdminPassword',
     ),
-    'ldap' => array(
+    'dev-ldap' => array(
         'ldap:LDAP',
         'hostname' => 'localhost',
         'enable_tls' => FALSE,
@@ -27,6 +27,34 @@ $config = array(
         'search.attributes' => array('uid', 'mail'),
         'search.username' => 'cn=admin,dc=enabel,dc=be',
         'search.password' => 'password',
+        'priv.read' => FALSE,
+        'priv.username' => NULL,
+        'priv.password' => NULL,
+    ),
+    'enabel-ldap' => array(
+        'ldap:LDAP',
+        'hostname' => 'bisdir-stage.btcctb.net',
+        'enable_tls' => false,
+        'debug' => TRUE,
+        'timeout' => 0,
+        'port' => 389,
+        'referrals' => TRUE,
+        'attributes' => array(
+            'cn', 
+            'givenName', 
+            'mail', 
+            'sn', 
+            'displayName',
+            'employeeNumber',
+            'title',
+            'initials',
+            'uid'
+        ),
+        'search.enable' => TRUE,
+        'search.base' => 'dc=enabel,dc=be',
+        'search.attributes' => array('uid', 'mail'),
+        'search.username' => 'cn=ldapro,dc=enabel,dc=be',
+        'search.password' => 'ldapro',
         'priv.read' => FALSE,
         'priv.username' => NULL,
         'priv.password' => NULL,
